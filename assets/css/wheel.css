@@ -1,0 +1,177 @@
+.wheel-container {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+}
+
+#canvas {
+  padding: 0;
+  margin: 0 auto;
+  display: block;
+}
+
+.spin-button {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  width: 22%;
+  height: 22%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.3s linear;
+}
+
+.spin-button img {
+  width: 100%;
+}
+
+.spin-button:hover {
+  filter: sepia(30%);
+  transform: translate(-50%, -50%) scale(1.03);
+}
+
+.spin-button:disabled {
+  filter: grayscale(100%);
+  cursor: not-allowed;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.modal-content {
+  width: 70%;
+  background-color: #e42e2b;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prize-img_wrapper {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: inset rgba(0, 0, 0, 0.4) 2px 3px 6px 1px;
+}
+
+.prize-image {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.congrats-text {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#prizeText {
+  max-width: 100%;
+  margin: 0;
+  color: white;
+  font-size: 1rem;
+}
+
+.close-button {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem 0;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  color: #d20029;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Thêm mũi tên đỏ */
+.arrow {
+  position: absolute;
+  top: 38.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid rgb(230, 255, 1);
+}
+
+.modal-end {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 30;
+}
+
+.modal-content-end {
+  width: 70%;
+  background-color: #e42e2b;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.close-button-end {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1rem 0 1rem 0;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  color: #d20029;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.border-wheel {
+  width: 140%;
+  position: absolute;
+  top: -11%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.border-wheel img {
+  width: 100%;
+}

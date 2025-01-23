@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="./javascript-winwheel-2.8.0/Winwheel.min.js"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/wheel.css" />
+    <link rel="stylesheet" href="./assets/css/all.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="home">
+        <div class="logo_company">
+          <img src="./assets/img/adv_digital_logo.png" alt="" />
+        </div>
+        <div class="home_content">
+          <img src="./assets/img/dialog-content.png" alt="" />
+        </div>
+        <div class="home_wheel">
+          <img src="./assets/img/home-wheel.png" alt="" />
+        </div>
+        <div class="start-btn" id="start_btn">
+          <img src="./assets/img/button_frame.png" alt="" />
+          <p>THAM GIA NGAY</p>
+        </div>
+      </div>
+
+      <div class="luckywheel-page">
+        <div class="wheel-header">
+          <div class="wheel-navbar">
+            <div class="home-btn">
+              <img src="./assets/img/home-btn.png" alt="" />
+            </div>
+            <div class="navbar-btn">
+              <img src="./assets/img/navbar-btn.png" alt="" />
+            </div>
+          </div>
+          <img src="./assets/img/wheel-header.png" alt="" />
+        </div>
+
+        <div class="wheel-container">
+          <canvas id="canvas" width="290" height="290">
+            Canvas not supported, use another browser.
+          </canvas>
+          <button class="spin-button" onclick="startSpin();">
+            <img src="./assets/img/Vector Smart Object2.png" alt="" />
+          </button>
+          <div class="border-wheel">
+            <img src="./assets/img/wheel-border1.png" alt="" />
+          </div>
+        </div>
+
+        <div class="wheel-footer">
+          <div class="footer-bg-top">
+            <img src="./assets/img/background-top.png" alt="" />
+          </div>
+          <h3>Bạn có <span id="turn-number">01</span> lượt quay</h3>
+          <div class="wheel-footer-img">
+            <img src="./assets/img/snake.png" alt="" />
+          </div>
+        </div>
+
+        <div id="resultModal" class="modal">
+          <div class="modal-content">
+            <div class="prize-img_wrapper">
+              <img id="prizeImage" class="prize-image" src="" alt="Prize" />
+            </div>
+            <h2 class="congrats-text">
+              Chúc mừng <span class="username-text">Văn A</span>!
+            </h2>
+            <p id="prizeText"></p>
+            <button class="close-button" onclick="closeModal()">Đóng</button>
+          </div>
+        </div>
+
+        <div id="outOfPrizesModal" class="modal-end">
+          <div class="modal-content-end">
+            <h2>Đã hết phần quà!</h2>
+            <p>
+              Rất tiếc, không còn phần quà nào để quay nữa. Cảm ơn bạn đã tham
+              gia!
+            </p>
+            <button class="close-button-end" onclick="closeOutOfPrizesModal()">
+              Đóng
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="winner-page">
+        <div class="wheel-header">
+          <div class="wheel-navbar">
+            <div class="home-btn">
+              <img src="./assets/img/home-btn.png" alt="" />
+            </div>
+            <div class="navbar-btn">
+              <img src="./assets/img/navbar-btn.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="winner_page-body">
+          <div class="winner-header">
+            <img src="./assets/img/adv_digital_logo.png" alt="" />
+          </div>
+          <div class="winner-body">
+            <div class="winner-body_header">
+              Danh sách những người trúng thưởng
+            </div>
+            <div class="winner-table">
+              <div class="table-header">
+                <p>Tuần 1</p>
+                <p>Phần quà</p>
+              </div>
+              <div class="table-body" id="user-list">
+                <!-- <div class="table-item">
+                  <div class="table-left">
+                    <div class="user-avatar">
+                      <img src="./assets/img/user-avatar.png" alt="" />
+                    </div>
+                    <div class="user-info">
+                      <p class="winner-name">Nguyễn Văn A</p>
+                      <p class="winner-time">10:30 - 11/11</p>
+                    </div>
+                  </div>
+                  <div class="table-right">
+                    <div class="winner-prize_img">
+                      <img src="./assets/img/prize.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-item">
+                  <div class="table-left">
+                    <div class="user-avatar">
+                      <img src="./assets/img/user-avatar.png" alt="" />
+                    </div>
+                    <div class="user-info">
+                      <p class="winner-name">Nguyễn Văn A</p>
+                      <p class="winner-time">10:30 - 11/11</p>
+                    </div>
+                  </div>
+                  <div class="table-right">
+                    <div class="winner-prize_img">
+                      <img src="./assets/img/prize.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-item">
+                  <div class="table-left">
+                    <div class="user-avatar">
+                      <img src="./assets/img/user-avatar.png" alt="" />
+                    </div>
+                    <div class="user-info">
+                      <p class="winner-name">Nguyễn Văn A</p>
+                      <p class="winner-time">10:30 - 11/11</p>
+                    </div>
+                  </div>
+                  <div class="table-right">
+                    <div class="winner-prize_img">
+                      <img src="./assets/img/prize.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-item">
+                  <div class="table-left">
+                    <div class="user-avatar">
+                      <img src="./assets/img/user-avatar.png" alt="" />
+                    </div>
+                    <div class="user-info">
+                      <p class="winner-name">Nguyễn Văn A</p>
+                      <p class="winner-time">10:30 - 11/11</p>
+                    </div>
+                  </div>
+                  <div class="table-right">
+                    <div class="winner-prize_img">
+                      <img src="./assets/img/prize.png" alt="" />
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div class="pagination-winner">
+                <button>
+                  <i class="fa-solid fa-angle-left" id="prev-list-btn"></i>
+                </button>
+                <ul id="pagination">
+                  <li class="active">1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                </ul>
+                <button>
+                  <i class="fa-solid fa-angle-right" id="next-list-btn"></i>
+                </button>
+              </div>
+            </div>
+            <div class="winner-footer">
+              <img src="./assets/img/snake.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dialog-register_wrapper" id="dialog-register">
+        <div class="dialog-register_body">
+          <div class="camera-wrapper">
+            <div class="video-wrapper">
+              <video id="video" autoplay playsinline></video>
+              <div id="countdown">3</div>
+            </div>
+            <canvas id="canvas-capture" style="display:none;"></canvas>
+            <img id="photo" alt="Captured Photo" />
+          </div>
+          <img
+            class="content-dialog"
+            src="./assets/img/dialog-content.png"
+            alt=""
+          />
+          <div class="dialog-capture" id="capture-btn">
+            <img src="./assets/img/button_frame.png" alt="" />
+            <p>Chụp ảnh đại diện</p>
+          </div>
+
+          <form class="register-form">
+            <input type="text" placeholder="Nhập tên của bạn" />
+            <input type="text" placeholder="Nhập số điện thoại" />
+            <input type="email" placeholder="Nhập email" />
+          </form>
+
+          <div class="dialog-capture" id="register-btn" style="display: none;">
+            <img src="./assets/img/button_frame.png" alt="" />
+            <p>Đăng ký</p>
+          </div>
+
+          <img
+            src="./assets/img/background-top.png"
+            alt=""
+            class="dialog-background-top"
+          />
+          <img
+            src="./assets/img/background-bottom.png"
+            alt=""
+            class="dialog-background-bottom"
+          />
+          <img
+            src="./assets/img/dialog-bottom.png"
+            alt=""
+            class="dialog-bottom"
+          />
+        </div>
+
+        <div class="dialog-login_body" id="dialog-login_body">
+          <img
+            class="content-dialog"
+            src="./assets/img/dialog-content.png"
+            alt=""
+          />
+          <h1>Đăng nhập</h1>
+          <form class="login-form">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+          </form>
+          <p class="change-register">
+            Chưa có tài khoản? <span id="change-register_btn">Đăng ký</span>
+          </p>
+          <div class="dialog-capture" id="login-btn">
+            <img src="./assets/img/button_frame.png" alt="" />
+            <p>Đăng nhập</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/all.js"></script>
+    <script src="./assets/js/wheel.js"></script>
+  </body>
+</html>

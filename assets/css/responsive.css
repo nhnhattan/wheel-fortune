@@ -1,0 +1,187 @@
+@media (min-width: 2100px) and (min-height: 3800px) {
+  .home {
+    /* padding-top: 5rem; */
+  }
+
+  .home_content {
+    width: 80%;
+  }
+
+  .home_wheel {
+    margin-top: -18rem;
+  }
+
+  .start-btn {
+    margin-top: -35rem !important;
+  }
+
+  #start_btn p {
+    font-size: 5rem;
+  }
+
+  .dialog-login_body .content-dialog {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+
+  .dialog-login_body h1 {
+    font-size: 12rem;
+    margin-bottom: 10rem;
+  }
+
+  .dialog-login_body .login-form input {
+    margin-bottom: 5rem;
+    font-size: 10rem;
+    padding: 3.75rem 4.5rem;
+  }
+
+  .dialog-login_body p {
+    font-size: 7rem;
+  }
+
+  .dialog-login_body .dialog-capture p {
+    font-size: 8.2rem;
+  }
+
+  .dialog-register_body .dialog-capture p {
+    font-size: 5rem;
+  }
+
+  video {
+    width: 1000px;
+    height: 1000px;
+    margin: 5rem auto;
+  }
+
+  #countdown {
+    font-size: 30rem;
+  }
+
+  #photo {
+    width: 1000px;
+    height: 1000px;
+    margin: 5rem auto;
+  }
+
+  .dialog-register_body .register-form input {
+    margin-bottom: 5rem;
+    font-size: 10rem;
+    padding: 3.75rem 4.5rem;
+  }
+
+  .wheel-container {
+    margin-bottom: 12rem;
+  }
+
+  .wheel-footer h3 {
+    font-size: 8.4rem;
+    margin: 0;
+    margin-top: 4rem;
+  }
+
+  .wheel-footer .wheel-footer-img {
+    margin-bottom: -10rem;
+  }
+
+  .modal-content,
+  .modal-content-end {
+    padding: 8rem;
+    border-radius: 5rem;
+  }
+
+  .prize-img_wrapper {
+    width: 600px;
+    height: 600px;
+  }
+
+  .prize-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .congrats-text {
+    font-size: 7.2rem;
+  }
+
+  #prizeText {
+    font-size: 8rem;
+  }
+
+  .close-button {
+    font-size: 10rem;
+    margin: 5rem 0 1rem 0;
+    padding: 1.5rem 8rem;
+    border-radius: 2rem;
+  }
+
+  .luckywheel-page .wheel-navbar {
+    margin-top: 4rem;
+  }
+
+  .modal-content-end h2 {
+    font-size: 8rem;
+  }
+
+  .modal-content-end p {
+    font-size: 8rem;
+  }
+
+  .close-button-end {
+    font-size: 10rem;
+    margin: 5rem 0 1rem 0;
+    padding: 1.5rem 8rem;
+    border-radius: 2rem;
+  }
+
+  .winner-body {
+    padding: 3rem 0;
+  }
+
+  .winner-body .winner-body_header {
+    font-size: 6rem;
+    padding: 4rem;
+    border-radius: 1.5rem;
+  }
+
+  .winner-body .winner-table .table-header {
+    padding: 2.5rem 3rem;
+  }
+
+  .winner-body .winner-table .table-header p {
+    font-size: 6rem;
+  }
+
+  .winner-table .table-body {
+    padding: 3rem;
+  }
+
+  .winner-table .table-body .table-item {
+    padding-top: 4.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .winner-table .table-body .table-item .table-left .user-info p {
+    font-size: 6rem;
+  }
+
+  .winner-table .table-body .table-item .table-left .user-info {
+    padding-left: 3rem;
+  }
+
+  .pagination-winner ul {
+    width: 50%;
+  }
+
+  .pagination-winner {
+    font-size: 8rem;
+    padding-bottom: 20rem;
+  }
+
+  .pagination-winner button {
+    font-size: 8rem;
+  }
+
+  .pagination-winner ul li.active {
+    padding-bottom: .3rem;
+  }
+}
