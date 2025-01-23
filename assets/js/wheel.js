@@ -7,7 +7,7 @@ const spinSound = new Audio("./assets/audio/spinSound.mp3");
 const winSound = new Audio("./assets/audio/winSound.mp3"); 
 
 spinSound.loop = true; 
-spinSound.volume = 0.5; 
+spinSound.volume = 1; 
 winSound.volume = 1; 
 
 const prizes = [
