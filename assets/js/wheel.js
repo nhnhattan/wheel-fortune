@@ -3,71 +3,91 @@ let wheelSpinning = false;
 let usedPrizes = []; // Mảng lưu kết quả các phần quà đã trúng
 const prizes = [
   {
-    name: "Iphone 15",
+    name: "500k",
     image: "./assets/img/binhnuoc.png",
     fillStyle: "#FF6B6B",
   },
   {
-    name: "Laptop",
+    name: "200k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#4ECDC4",
   },
   {
-    name: "Tai nghe",
+    name: "100k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#45B7D1",
   },
   {
-    name: "Voucher 500k",
+    name: "500k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#96CEB4",
   },
   {
-    name: "Quà may mắn",
+    name: "100k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#FFEEAD",
   },
   {
-    name: "Thẻ cào 100k",
+    name: "100k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#D4A5A5",
   },
   {
-    name: "Mã giảm giá 50%",
+    name: "200k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#9DC8C8",
   },
   {
-    name: "Quà bí mật",
+    name: "200k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#58C9B9",
   },
-  // { name: 'Quà bí mật', image: 'https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png', fillStyle: '#58C9B9' },
-  // { name: 'Quà bí mật', image: 'https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png', fillStyle: '#58C9B9' },
-  // { name: 'Quà bí mật', image: 'https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png', fillStyle: '#58C9B9' },
-  // { name: 'Quà bí mật', image: 'https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png', fillStyle: '#58C9B9' },
+  {
+    name: "200k",
+    image:
+      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    fillStyle: "#58C9B9",
+  },
+  {
+    name: "200k",
+    image:
+      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    fillStyle: "#58C9B9",
+  },
+  {
+    name: "100k",
+    image:
+      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    fillStyle: "#58C9B9",
+  },
+  {
+    name: "100k",
+    image:
+      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    fillStyle: "#58C9B9",
+  },
 ];
 
 let prizeImages = [];
 let imageWidth = 35;
 let imageHeight = 35;
 let radiusFromCenter = 70; // Khoảng cách từ tâm đến hình ảnh (đã giảm xuống)
-let textFontSize = 12
-let textMargin = 15
+let textFontSize = 12;
+let textMargin = 15;
 
 if (window.innerWidth >= 2150 && window.innerHeight >= 3800) {
-  imageWidth = 200
-  imageHeight = 200
-  radiusFromCenter = 300
-  textFontSize = 70
-  textMargin = 25
+  imageWidth = 200;
+  imageHeight = 200;
+  radiusFromCenter = 300;
+  textFontSize = 70;
+  textMargin = 25;
 }
 
 function wrapText(text, maxLength) {
@@ -116,7 +136,7 @@ function drawSegmentImages() {
       180;
 
     ctx.save();
-    ctx.rotate(angle); 
+    ctx.rotate(angle);
     ctx.translate(0, -theWheel.outerRadius + radiusFromCenter); // Dịch chuyển hình ảnh từ tâm ra ngoài
     ctx.drawImage(
       img,
@@ -152,14 +172,14 @@ function showOutOfPrizes() {
   modal.style.display = "block";
 }
 
-let canvasOuterRadius = 145
-let canvasCenterX = 145
-let canvasCenterY = 145
+let canvasOuterRadius = 145;
+let canvasCenterX = 145;
+let canvasCenterY = 145;
 
 if (window.innerWidth >= 2150 && window.innerHeight >= 3800) {
-  canvasOuterRadius = 650
-  canvasCenterX = 650
-  canvasCenterY = 650
+  canvasOuterRadius = 650;
+  canvasCenterX = 650;
+  canvasCenterY = 650;
 }
 
 async function initWheel() {

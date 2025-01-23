@@ -2,6 +2,7 @@ const dialogRegister = document.getElementById("dialog-register");
 const dialogLogin = document.getElementById("dialog-login_body");
 const captureBtn = document.getElementById("capture-btn");
 const registerBtn = document.getElementById("register-btn");
+const loginBtn = document.getElementById("login-btn");
 
 // responsive
 if (window.innerWidth >= 2150 && window.innerHeight >= 3800) {
@@ -63,6 +64,12 @@ navigator.mediaDevices
 captureBtn.addEventListener("click", () => {});
 
 registerBtn.addEventListener("click", () => {
+  dialogRegister.style.display = "none";
+  document.querySelector(".home").style.display = "none";
+  document.querySelector(".luckywheel-page").style.display = "flex";
+});
+
+loginBtn.addEventListener("click", () => {
   dialogRegister.style.display = "none";
   document.querySelector(".home").style.display = "none";
   document.querySelector(".luckywheel-page").style.display = "flex";
