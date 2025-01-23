@@ -6,9 +6,9 @@ let usedPrizes = []; // Mảng lưu kết quả các phần quà đã trúng
 const spinSound = new Audio("./assets/audio/spinSound.mp3"); 
 const winSound = new Audio("./assets/audio/winSound.mp3"); 
 
-spinSound.loop = true; // Lặp lại âm thanh khi vòng quay quay
-spinSound.volume = 0.5; // Âm lượng âm thanh quay
-winSound.volume = 1; // Âm lượng âm thanh trúng thưởng
+spinSound.loop = true; 
+spinSound.volume = 0.5; 
+winSound.volume = 1; 
 
 const prizes = [
   {
@@ -87,7 +87,7 @@ const prizes = [
 let prizeImages = [];
 let imageWidth = 35;
 let imageHeight = 35;
-let radiusFromCenter = 70; // Khoảng cách từ tâm đến hình ảnh (đã giảm xuống)
+let radiusFromCenter = 70; // Khoảng cách từ tâm đến hình ảnh
 let textFontSize = 12;
 let textMargin = 15;
 
@@ -160,22 +160,18 @@ function drawSegmentImages() {
   ctx.restore();
 }
 
-// Kiểm tra xem còn phần quà nào chưa trúng không
 function checkAvailablePrizes() {
   return prizes.filter((prize) => !usedPrizes.includes(prize.name));
 }
 
-// Thêm phần quà vào mảng usedPrizes khi đã quay
 function addUsedPrize(prize) {
   usedPrizes.push(prize);
 }
 
-// Kiểm tra xem phần quà đã trúng chưa
 function checkUsedPrizes(result) {
   return usedPrizes.includes(result);
 }
 
-// Hàm này sẽ hiển thị modal khi hết phần quà
 function showOutOfPrizes() {
   const modal = document.getElementById("outOfPrizesModal");
   modal.style.display = "block";
@@ -240,18 +236,16 @@ function startSpin() {
   if (!wheelSpinning) {
     const availablePrizes = checkAvailablePrizes();
 
-    // Kiểm tra xem còn phần quà để quay không
     if (availablePrizes.length === 0) {
       showOutOfPrizes();
       return;
     }
 
-    // Đặt lại góc quay về 0 mỗi khi quay
+    // Đặt lại góc quay về 0
     theWheel.rotationAngle = 0;
 
     spinSound.play();
 
-    // Tính toán góc dừng và đảm bảo kết quả không trùng
     let stopAt;
     do {
       stopAt = Math.floor(Math.random() * 360);
@@ -263,7 +257,7 @@ function startSpin() {
       const prizeIndex = Math.floor(adjustedStopAt / (360 / prizes.length));
       if (!checkUsedPrizes(prizes[prizeIndex].name)) {
         theWheel.animation.stopAngle = adjustedStopAt;
-        addUsedPrize(prizes[prizeIndex].name); // Lưu lại phần quà đã trúng
+        addUsedPrize(prizes[prizeIndex].name); 
         break;
       }
     } while (true);
@@ -278,11 +272,9 @@ window.onload = initWheel;
 
 function alertPrize(indicatedSegment) {
 
-  // Dừng âm thanh quay
   spinSound.pause();
   spinSound.currentTime = 0;
 
-  // Phát âm thanh khi trúng thưởng
   winSound.play();
   
   const prizeIndex = prizes.findIndex(
@@ -294,26 +286,22 @@ function alertPrize(indicatedSegment) {
   document.getElementById("prizeImage").src = prizes[prizeIndex].image;
   document.getElementById("resultModal").style.display = "block";
 
-  // Đổi màu xám cho phần quà đã trúng
-  const prizeSegment = theWheel.getIndicatedSegment(); // Lấy phần quà đã trúng
-  prizeSegment.fillStyle = "#BEBEBE"; // Màu xám
+  const prizeSegment = theWheel.getIndicatedSegment(); 
+  prizeSegment.fillStyle = "#BEBEBE"; 
 
   wheelSpinning = false;
   document.querySelector(".spin-button").disabled = false;
 
-  // Vẽ lại vòng quay một lần nữa để đảm bảo hình ảnh được căn chỉnh chính xác
   setTimeout(() => {
     theWheel.draw();
     drawSegmentImages();
   }, 100);
 }
 
-// Đóng modal khi kết quả đã được hiển thị
 function closeModal() {
   document.getElementById("resultModal").style.display = "none";
 }
 
-// Modal thông báo hết phần quà
 function closeOutOfPrizesModal() {
   document.getElementById("outOfPrizesModal").style.display = "none";
 }
