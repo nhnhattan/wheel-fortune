@@ -1,6 +1,15 @@
 let theWheel;
 let wheelSpinning = false;
 let usedPrizes = []; // Mảng lưu kết quả các phần quà đã trúng
+
+// Sounds
+const spinSound = new Audio("./assets/audio/spinSound.mp3"); 
+const winSound = new Audio("./assets/audio/winSound.mp3"); 
+
+spinSound.loop = true; // Lặp lại âm thanh khi vòng quay quay
+spinSound.volume = 0.5; // Âm lượng âm thanh quay
+winSound.volume = 1; // Âm lượng âm thanh trúng thưởng
+
 const prizes = [
   {
     name: "500k",
@@ -240,6 +249,8 @@ function startSpin() {
     // Đặt lại góc quay về 0 mỗi khi quay
     theWheel.rotationAngle = 0;
 
+    spinSound.play();
+
     // Tính toán góc dừng và đảm bảo kết quả không trùng
     let stopAt;
     do {
@@ -266,6 +277,14 @@ function startSpin() {
 window.onload = initWheel;
 
 function alertPrize(indicatedSegment) {
+
+  // Dừng âm thanh quay
+  spinSound.pause();
+  spinSound.currentTime = 0;
+
+  // Phát âm thanh khi trúng thưởng
+  winSound.play();
+  
   const prizeIndex = prizes.findIndex(
     (prize) => wrapText(prize.name, 8) === indicatedSegment.text
   );
