@@ -12,71 +12,83 @@ winSound.volume = 1;
 
 const prizes = [
   {
+    id: 1,
     name: "500k",
     image: "./assets/img/binhnuoc.png",
     fillStyle: "#FF6B6B",
   },
   {
+    id: 2,
     name: "200k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#4ECDC4",
   },
   {
+    id: 3,
     name: "100k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#45B7D1",
   },
   {
+    id: 4,
     name: "500k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#96CEB4",
   },
   {
+    id: 5,
     name: "100k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#FFEEAD",
   },
   {
+    id: 6,
     name: "100k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#D4A5A5",
   },
   {
+    id: 7,
     name: "200k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#9DC8C8",
   },
   {
+    id: 8,
     name: "200k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#58C9B9",
   },
   {
+    id: 9,
     name: "200k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#58C9B9",
   },
   {
+    id: 10,
     name: "200k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#58C9B9",
   },
   {
+    id: 11,
     name: "100k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#58C9B9",
   },
   {
+    id: 12,
     name: "100k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
@@ -161,7 +173,7 @@ function drawSegmentImages() {
 }
 
 function checkAvailablePrizes() {
-  return prizes.filter((prize) => !usedPrizes.includes(prize.name));
+  return prizes.filter((prize) => !usedPrizes.includes(prize.id));
 }
 
 function addUsedPrize(prize) {
@@ -255,9 +267,9 @@ function startSpin() {
 
       // Kiểm tra xem phần quà này đã trúng chưa
       const prizeIndex = Math.floor(adjustedStopAt / (360 / prizes.length));
-      if (!checkUsedPrizes(prizes[prizeIndex].name)) {
+      if (!checkUsedPrizes(prizes[prizeIndex].id)) {
         theWheel.animation.stopAngle = adjustedStopAt;
-        addUsedPrize(prizes[prizeIndex].name); 
+        addUsedPrize(prizes[prizeIndex].id); 
         break;
       }
     } while (true);
@@ -288,7 +300,7 @@ function alertPrize(indicatedSegment) {
 
   const prizeSegment = theWheel.getIndicatedSegment(); 
   prizeSegment.fillStyle = "#BEBEBE"; 
-
+  prizeSegment.textFillStyle = "#000"
   wheelSpinning = false;
   document.querySelector(".spin-button").disabled = false;
 
