@@ -127,8 +127,8 @@ let textFontSize = 12;
 let textMargin = 15;
 
 if (window.screen.width >= 2000 && window.screen.height >= 3000) {
-  imageWidth = 200;
-  imageHeight = 200;
+  imageWidth = 150;
+  imageHeight = 150;
   radiusFromCenter = 300;
   textFontSize = 70;
   textMargin = 25;
