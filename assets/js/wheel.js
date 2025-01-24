@@ -14,7 +14,9 @@ const prizes = [
   {
     id: 1,
     name: "500k",
-    image: "./assets/img/binhnuoc.png",
+    // image: "./assets/img/binhnuoc.png",
+    image:
+    "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#FF6B6B",
   },
   {
@@ -90,6 +92,27 @@ const prizes = [
   {
     id: 12,
     name: "100k",
+    image:
+      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    fillStyle: "#58C9B9",
+  },
+  {
+    id: 13,
+    name: "200k",
+    image:
+      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    fillStyle: "#58C9B9",
+  },
+  {
+    id: 14,
+    name: "100k",
+    image:
+      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    fillStyle: "#58C9B9",
+  },
+  {
+    id: 15,
+    name: "200k",
     image:
       "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#58C9B9",
