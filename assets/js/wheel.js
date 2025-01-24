@@ -126,7 +126,7 @@ let radiusFromCenter = 70; // Khoảng cách từ tâm đến hình ảnh
 let textFontSize = 12;
 let textMargin = 15;
 
-if (window.innerWidth >= 2000 && window.innerHeight >= 3000) {
+if (window.screen.width >= 2000 && window.screen.height >= 3000) {
   imageWidth = 200;
   imageHeight = 200;
   radiusFromCenter = 300;
