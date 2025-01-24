@@ -3,12 +3,12 @@ let wheelSpinning = false;
 let usedPrizes = []; // Mảng lưu kết quả các phần quà đã trúng
 
 // Sounds
-const spinSound = new Audio("./assets/audio/spinSound.mp3"); 
-const winSound = new Audio("./assets/audio/winSound.mp3"); 
+const spinSound = new Audio("./assets/audio/spinSound.mp3");
+const winSound = new Audio("./assets/audio/winSound.mp3");
 
-spinSound.loop = true; 
-spinSound.volume = 1; 
-winSound.volume = 1; 
+spinSound.loop = true;
+spinSound.volume = 1;
+winSound.volume = 1;
 
 const prizes = [
   {
@@ -16,7 +16,7 @@ const prizes = [
     name: "500k",
     // image: "./assets/img/binhnuoc.png",
     image:
-    "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
     fillStyle: "#FF6B6B",
   },
   {
@@ -126,7 +126,7 @@ let radiusFromCenter = 70; // Khoảng cách từ tâm đến hình ảnh
 let textFontSize = 12;
 let textMargin = 15;
 
-if (window.screen.width >= 2000 && window.screen.height >= 3000) {
+while (window.screen.width >= 2000 && window.screen.height >= 3000) {
   imageWidth = 150;
   imageHeight = 150;
   radiusFromCenter = 300;
@@ -292,7 +292,7 @@ function startSpin() {
       const prizeIndex = Math.floor(adjustedStopAt / (360 / prizes.length));
       if (!checkUsedPrizes(prizes[prizeIndex].id)) {
         theWheel.animation.stopAngle = adjustedStopAt;
-        addUsedPrize(prizes[prizeIndex].id); 
+        addUsedPrize(prizes[prizeIndex].id);
         break;
       }
     } while (true);
@@ -306,12 +306,11 @@ function startSpin() {
 window.onload = initWheel;
 
 function alertPrize(indicatedSegment) {
-
   spinSound.pause();
   spinSound.currentTime = 0;
 
   winSound.play();
-  
+
   const prizeIndex = prizes.findIndex(
     (prize) => wrapText(prize.name, 8) === indicatedSegment.text
   );
@@ -321,9 +320,9 @@ function alertPrize(indicatedSegment) {
   document.getElementById("prizeImage").src = prizes[prizeIndex].image;
   document.getElementById("resultModal").style.display = "block";
 
-  const prizeSegment = theWheel.getIndicatedSegment(); 
-  prizeSegment.fillStyle = "#BEBEBE"; 
-  prizeSegment.textFillStyle = "#000"
+  const prizeSegment = theWheel.getIndicatedSegment();
+  prizeSegment.fillStyle = "#BEBEBE";
+  prizeSegment.textFillStyle = "#000";
   wheelSpinning = false;
   document.querySelector(".spin-button").disabled = false;
 
