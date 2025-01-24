@@ -5,7 +5,7 @@ const registerBtn = document.getElementById("register-btn");
 const loginBtn = document.getElementById("login-btn");
 
 // responsive
-if (window.innerWidth >= 2150 && window.innerHeight >= 3800) {
+if (window.screen.width >= 2000 && window.screen.height >= 3000) {
   document.getElementById("canvas").width = 1300;
   document.getElementById("canvas").height = 1300;
 }
