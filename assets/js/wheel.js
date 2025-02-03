@@ -14,107 +14,91 @@ const prizes = [
   {
     id: 1,
     name: "500k",
-    // image: "./assets/img/binhnuoc.png",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/500k.png",
     fillStyle: "#FF6B6B",
   },
   {
     id: 2,
     name: "200k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/200k.png",
     fillStyle: "#4ECDC4",
   },
   {
     id: 3,
     name: "100k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/100k.png",
     fillStyle: "#45B7D1",
   },
   {
     id: 4,
     name: "500k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/500k.png",
     fillStyle: "#96CEB4",
   },
   {
     id: 5,
     name: "100k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/100k.png",
     fillStyle: "#FFEEAD",
   },
   {
     id: 6,
     name: "100k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/100k.png",
     fillStyle: "#D4A5A5",
   },
   {
     id: 7,
     name: "200k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/200k.png",
     fillStyle: "#9DC8C8",
   },
   {
     id: 8,
     name: "200k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/200k.png",
     fillStyle: "#58C9B9",
   },
   {
     id: 9,
     name: "200k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/200k.png",
     fillStyle: "#58C9B9",
   },
   {
     id: 10,
     name: "200k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/200k.png",
     fillStyle: "#58C9B9",
   },
   {
     id: 11,
     name: "100k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/100k.png",
     fillStyle: "#58C9B9",
   },
   {
     id: 12,
     name: "100k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/100k.png",
     fillStyle: "#58C9B9",
   },
   {
     id: 13,
     name: "200k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/200k.png",
     fillStyle: "#58C9B9",
   },
   {
     id: 14,
     name: "100k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/100k.png",
     fillStyle: "#58C9B9",
   },
   {
     id: 15,
     name: "200k",
-    image:
-      "https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png",
+    image: "./assets/img/200k.png",
     fillStyle: "#58C9B9",
   },
 ];
